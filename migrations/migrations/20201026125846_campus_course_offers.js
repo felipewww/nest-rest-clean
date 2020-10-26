@@ -3,8 +3,6 @@ exports.up = function(knex) {
         .createTable('campus_course_offers', function (table) {
             table.increments('id');
 
-            table.string('name', 255).notNullable();
-
             table.float('discount_percentage').notNullable();
 
             table.boolean('enabled').notNullable();
