@@ -29,6 +29,19 @@ services:
     networks:
       - nest-network
 
+  nest-migrations:
+    image: nest-dev/migrations:latest
+    container_name: nest-migrations
+    tty: true
+    command:
+      - /entrypoint.sh
+    volumes:
+      - ./migrations:/app
+    networks:
+      - nest-network
+    depends_on:
+      - nest-db
+
 networks:
   nest-network:
     driver: bridge

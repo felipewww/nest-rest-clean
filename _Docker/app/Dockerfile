@@ -8,5 +8,5 @@ RUN apt-get update && apt-get -y install procps
 RUN npm install -g typescript
 RUN npm install -g @nestjs/cli
 
-COPY ./app/entrypoint.sh /entrypoint.sh
+COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh

@@ -2,6 +2,12 @@ version: '3'
 services:
   nest-api:
     build:
-      context: ./_Docker
-      dockerfile: app/Dockerfile
+      context: ./_Docker/app
+      dockerfile: Dockerfile
     image: nest-dev/api:latest
+
+  nest-migrations:
+    build:
+      context: ./_Docker/migrations
+      dockerfile: Dockerfile
+    image: nest-dev/migrations:latest
