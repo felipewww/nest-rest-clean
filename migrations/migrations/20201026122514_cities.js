@@ -1,10 +1,9 @@
-
 exports.up = function(knex) {
     return knex.schema
-        .createTable('appsetup', function (table) {
+        .createTable('cities', function (table) {
             table.increments('id');
 
-            table.string('col_test', 255).notNullable();
+            table.string('name', 255).notNullable();
 
             table.timestamps(true, true);
         })
@@ -12,5 +11,6 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
     return knex.schema
-        .dropTable("appsetup")
+        .dropTable("cities")
 };
+
